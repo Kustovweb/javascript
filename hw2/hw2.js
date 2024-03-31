@@ -2,11 +2,11 @@
 // Создать переменные num1, num2 которые пользователь вводит с клавиатуры
 // Проверьте, что переменная num1 равна или меньше 1, а переменная num2 больше или равна 3.
 
-let num1 = Number(prompt('Введите число 1'));
-let num2 = Number(prompt('Введите число 2'));
+// let num1 = Number(prompt('Введите число 1'));
+// let num2 = Number(prompt('Введите число 2'));
 
-console.log(num1 <= 1);
-console.log(num2 >= 3);
+// console.log(num1 <= 1);
+// console.log(num2 >= 3);
 
 // Задание 2
 // Перепишите код к тернарному оператору
@@ -67,5 +67,5 @@ while (num) {
     arr.push(num % 10);
     num = Math.floor(num / 10);
 }
-result = `количество сотен: ${arr[2]}, десятков: ${arr[1]}, единиц: ${arr[0]}`
+result = `количество сотен: ${num < 100 ? 0 : arr[2]}, десятков: ${arr[1]}, единиц: ${arr[0]}`
 console.log(result);
