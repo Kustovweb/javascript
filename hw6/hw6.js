@@ -86,8 +86,10 @@ function multip(num1, num2) {
 function div(num1, num2) {
     if (num2) {
         return num1 / num2;
+    } else {
+        return "Введите число больше нуля";
     }
 }
 
 
-console.log(diff(1, 1));
+console.log(div(5, 2));
