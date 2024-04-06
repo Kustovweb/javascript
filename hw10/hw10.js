@@ -128,7 +128,7 @@ const arrProducts = [
 ];
 
 console.log(arrProducts.filter(item => {
-    return item.photos && item.photos?.length !== 0;
+    return item.photos && item.photos.length !== 0;
 }));
 
 
