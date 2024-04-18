@@ -60,7 +60,11 @@ class Student {
         this.grade = grade;
     }
     displayInfo() {
-        console.log(`Имя: ${this.name}, возраст: ${this.age}, класс: ${this.grade}`);
+        console.log(`
+        Имя: ${this.name},
+        возраст: ${this.age},
+        класс: ${this.grade}
+        `);
     }
 
 };
