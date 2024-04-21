@@ -1,29 +1,27 @@
-"use strict";
-
-const Roomba = {
-    model: "Romba-1",
-    power: 200,
-    batterySize: 2100,
-    boxSize: 0.5,
-    workTime: 45,
-    counterOfStarts: 0,
-    isFull: false,
-    isObstacle: false,
-    isUVLampOn: false,
-    startCleaning() {
-        this.counterOfStarts++;
-        console.log('I am cleaning... I have been started: ',
-            this.counterOfStarts, 'times.');
+const Rubik = {
+    count: 0,
+    name: "Евгений",
+    age: 18,
+    getName() {
+        return this.name
     },
-    goCharge() {
-        console.log('I am going to charge...');
-    },
-    switchUVLamp() {
-        this.isUVLampOn = !this.isUVLampOn;
-        console.log(`UV lamp is ${this.isUVLampOn ? 'working' :
-            'not working'}.`);
+    getCounter(count) {
+        this.count = count;
+        return this.count++;
     }
 };
 
+const Logik = {
+    __proto__: Rubik,
+};
 
-setTimeout(Roomba.startCleaning.bind(Roomba), "1000");
+const obj = Object.create(null);
+
+console.log(obj.__proto__);
+console.log(obj.toString);
+
+console.log(Rubik.toString);
+console.log(Logik.name);
+
+
+

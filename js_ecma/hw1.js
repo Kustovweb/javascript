@@ -65,10 +65,11 @@ console.log(counter.value);
 function findElementByClass(rootElement, myClass) {
     let children = rootElement.children;
     let iter = children[Symbol.iterator]();
-    let el = iter.next();
     if (iter.next().value.classList.contains(myClass)) {
         return iter.next().value;
     }
+    iter.next();
+
     return findElementByClass(rootElement, myClass);
 }
 
