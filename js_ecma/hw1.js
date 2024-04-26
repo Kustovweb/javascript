@@ -63,14 +63,14 @@ console.log(counter.value);
 // }
 
 function findElementByClass(rootElement, myClass) {
-    let children = rootElement.children;
-    let iter = children[Symbol.iterator]();
-    if (iter.next().value.classList.contains(myClass)) {
-        return iter.next().value;
+    const childArr = Array.from(rootElement.children)
+    for (let elem of childArr) {
+        if (!elem.classList.contains(myClass)) {
+            return findElementByClass(rootElement, myClass)
+        } else {
+            return elem;
+        }
     }
-    iter.next();
-
-    return findElementByClass(rootElement, myClass);
 }
 
 const rootElement = document.getElementById('root');

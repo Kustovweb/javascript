@@ -90,10 +90,11 @@ class Order {
         this.products.push(product);
     }
     getTotalPrice() {
-        let result = 0;
-        this.products.forEach(el => {
-            result += el.price;
-        });
+        // let result = 0;
+        // this.products.forEach(el => {
+        //     result += el.price;
+        // });
+        let result = this.products.reduce((acc, nextElem) => acc + nextElem['price'], 0);
         return result;
     }
 
@@ -117,3 +118,8 @@ const product2 = new Product("Headphones", 100);
 order.addProduct(product2);
 
 console.log(order.getTotalPrice()); // Вывод: 600
+
+
+
+
+
