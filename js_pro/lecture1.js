@@ -84,16 +84,21 @@
 // console.log(getElementHtml());
 
 
-let lesson = new Map();
-const lecture = ['математика', 'английский', 'история', 'история'];
-lesson.set("Математика", "Смирнов")
-    .set("История", "Иванова");
+// let lesson = new Map();
+// const lecture = ['математика', 'английский', 'история', 'история'];
+// lesson.set("Математика", "Смирнов")
+//     .set("История", "Иванова");
 
-let lectures = new Set(lecture);
-let students = new Map();
-students.set("Иван", lectures)
-console.log(`Преподователь по математике: ${lesson.get("Математика")}`);
+// let lectures = new Set(lecture);
+// let students = new Map();
+// students.set("Иван", lectures)
+// console.log(`Преподователь по математике: ${lesson.get("Математика")}`);
 
-console.log(students.get("Иван"));
+// console.log(students.get("Иван"));
+
+
+let func = new Function('a', 'b', 'return a - b');
+
+console.log(func(4, 2));
 
 
