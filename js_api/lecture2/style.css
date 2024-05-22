@@ -1,0 +1,44 @@
+.slider-line {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slider-line img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.6s ease-in;
+}
+
+.controls {
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.dot-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dot-item {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #0dcaf0;
+    cursor: pointer;
+}
