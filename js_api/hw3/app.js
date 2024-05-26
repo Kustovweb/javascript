@@ -18,7 +18,7 @@ const img = document.createElement('img');
     img.src = data.urls.regular;
     img.id = data.id;
     root.insertAdjacentElement("afterbegin", img);
-    nameAuthor.textContent = ` Автор: ${data.user.username}`
+    nameAuthor.textContent = `Автор: ${data.user.username}`
 });
 
 
