@@ -3,7 +3,8 @@
         data() {
             return {
                 message: 'Hello Vue!!!',
-                items: ["OldElement1", "OldElement2"]
+                items: ["OldElement1", "OldElement2"],
+                inputText: "",
             }
         },
         methods: {
@@ -12,7 +13,9 @@
                 this.message = text;
             },
             addElementList() {
-                this.items.push('Новый элемент списка');
+                if (this.inputText.length != 0) {
+                    this.items.push(this.inputText);
+                }
             },
             removeItem(index) {
                 this.items.splice(index, 1);
@@ -28,7 +31,8 @@
     <ul v-for="(element,index) in items" :key="index">
         <li @click="removeItem(index)">{{ element }}</li>
     </ul>
-    <button @click = "addElementList">Добавить элемент списка</button>
+    <input type="text" v-model="inputText" placeholder="Введите текст">
+    <button @click = "addElementList">Добавить элемент</button>
 </template>
 
 <style scoped>
