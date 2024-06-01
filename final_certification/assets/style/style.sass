@@ -1,0 +1,260 @@
+@import "_normalize.scss"
+@import "_colors.sass"
+$jost-font: "Jost", sans-serif
+$dm-font: "DM Serif Display", sans-serif
+*,
+::before,
+::after
+    box-sizing: border-box
+html, body
+    height: 100%
+html
+    scroll-behavior: smooth
+
+body
+    font-family: $dm-font
+
+a
+    text-decoration: none
+    color: $light-black
+
+.wrapper
+    min-height: 100%
+    display: flex
+    flex-direction: column
+.main
+    flex-grow: 1
+.text-center
+    text-align: center
+.center
+    padding-left: calc(50% - 600px)
+    padding-right: calc(50% - 600px)
+
+.header
+    margin-top: 44px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__menu
+        list-style: none
+        display: flex
+        align-items: center
+        gap: 25px
+        font-family: $jost-font
+        font-size: 20px
+        &__item
+            a
+                color: inherit
+.logo
+    text-decoration: none
+    display: flex
+    align-items: center
+    font-size: 40px
+    gap: 10px
+    color: $black
+    text-transform: capitalize
+
+.banner
+    width: 100%
+    margin-top: 57px
+
+    &__content
+        background-image: url('../img/banner.png')
+        background-repeat: no-repeat
+        background-size: cover
+        border-radius: 29px
+        min-height: 758px
+        padding-top: 208px
+        padding-bottom: 208px
+        padding-left: 52px
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)
+
+        &__h1
+            font-size: 65px
+            margin-bottom: 18px
+            font-weight: 400
+        &__p
+            font-family: $jost-font
+            font-size: 22px
+            font-weight: 400
+            width: 433px
+            margin-bottom: 21px
+.btn
+    display: flex
+    padding: 26px 48px
+    background-color: $black
+    color: $white
+    gap: 10px
+    border: none
+    border-radius: 18px
+    cursor: pointer
+    font-family: $jost-font
+    font-size: 18px
+
+.project
+    margin-top: 96px
+    &__items
+        margin-top: 93px
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-auto-rows: 1fr
+        gap: 104px
+    &__item
+        width: 525px
+        &__text
+            display: flex
+            justify-content: space-between
+            align-items: center
+            font-family: $jost-font
+            font-size: 22px
+        &__img
+            width: 525px
+            height: 548px
+            display: block
+            &_br-top-right
+                img
+                    border-radius: 0 29px 0 0
+            &_br-top-left
+                img
+                    border-radius: 29px 0 0 0
+            &_br-bottom-right
+                img
+                    border-radius: 0 0 29px 0
+            &_br-bottom-left
+                img
+                    border-radius: 0 0 0 29px
+    &__heading
+        font-size: 50px
+        font-weight: 400
+        margin-bottom: 8px
+    &__subheading
+        font-size: 22px
+        font-weight: 400
+        font-family: $jost-font
+    &__btn
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        width: 70px
+        height: 70px
+        padding: 26px 26px
+        border: none
+        cursor: pointer
+        background-color: $grey
+.counter
+    background-color: $light-brown
+    margin-top: 96px
+    min-height: 457px
+    padding-top: 151px
+    padding-bottom: 151px
+    &-list
+        list-style: none
+        display: flex
+        text-align: center
+        justify-content: space-around
+        margin: 0
+        &__item
+            position: relative
+            &:not(:last-child)::after
+                content: ''
+                position: absolute
+                top: 100px
+                right: -70px
+                width: 1px
+                height: 130px
+                background-color: $brown
+            &__num
+                font-size: 85px
+                color: $brown
+                margin-bottom: 16px
+            &__text
+                font-size: 22px
+                font-family: $jost-font
+                color: $light-black
+.blog
+    margin-bottom: 30px
+    margin-top: 96px
+    &__items
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 25px
+    &__heading
+        &__title
+            font-size: 50px
+            color: $black
+            margin: 0
+            line-height: 125%
+            font-weight: 400
+        &__subtitle
+            font-size: 22px
+            color: $light-black
+            margin-top: 12px
+    &__item
+        padding: 21px 21px
+        width: 382px
+        border: 1px solid #e7e7e7
+        border-radius: 29px
+        transition: all .3s ease
+        &:hover
+            cursor: pointer
+            background-color: $light-brown
+            .blog__item__btn
+                background-color: $white
+        &__btn
+            padding: 20px 20px
+            width: 52px
+            height: 52px
+        &__img
+            img
+                border-radius: 29px 29px 0 0
+        &__text
+            font-size: 25px
+            color: $black
+        &__subcontent
+            &__date
+                margin-top: 30px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                &__text
+                    font-family: $jost-font
+                    color: $light-black
+            &__text
+                font-size: 25px
+                color: $black
+.footer
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    min-height: 437px
+    &__interno
+    &__logo
+    &__socials
+        margin-top: 31px
+    &__icon
+        &__twitter
+            margin-right: 54px
+        &__linkedin
+    &__pages
+        &__item
+            font-family: $jost-font
+            font-size: 22px
+            margin-bottom: 30px
+        &__title
+            font-size: 25px
+        &__items
+            list-style: none
+            padding: 0
+    &__contact
+        &__title
+            font-size: 25px
+            margin-bottom: 25px
+        &__address
+            font-size: 22px
+            font-family: $jost-font
+            font-style: normal
+        &__item
+            display: inline-block
+            margin-top: 35px
