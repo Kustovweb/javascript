@@ -1,10 +1,10 @@
 <script setup>
-import hw1 from './components/hw1.vue'
+import hw2 from './components/hw2.vue'
 </script>
 
 <template>
   <div class="wrapper">
-    <hw1 />
+    <hw2 />
   </div>
 </template>
 
