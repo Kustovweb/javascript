@@ -53,7 +53,11 @@ a
     gap: 10px
     color: $black
     text-transform: capitalize
-
+.heading
+    font-size: 50px
+    color: $black
+    font-weight: 400
+    margin: 0
 .banner
     width: 100%
     margin-top: 57px
@@ -79,7 +83,33 @@ a
             font-weight: 400
             width: 433px
             margin-bottom: 21px
+
 .btn
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    width: 70px
+    height: 70px
+    padding: 26px 26px
+    border: none
+    cursor: pointer
+    background-color: #F4F0EC
+    position: relative
+    transition: color .3s ease
+    &::after
+        content: ''
+        position: absolute
+        display: block
+        top: 50%
+        left: 40%
+        transform: translateY(-50%)
+        width: 20px
+        height: 20px
+        background-image: url(../img/arrow-btn-right.svg)
+        background-repeat: no-repeat
+
+.banner__btn
     display: flex
     padding: 26px 48px
     background-color: $black
@@ -173,13 +203,47 @@ a
                 font-family: $jost-font
                 color: $light-black
 .blog
-    margin-bottom: 30px
+    margin-bottom: 50px
     margin-top: 96px
+    &__tag
+        position: absolute
+        bottom: 22px
+        left: 21px
+        width: 60%
+        min-height: 40px
+        background-color: $white
+        border-radius: 8px 8px 8px 0
+        padding-top: 8px
+        padding-bottom: 8px
+        padding-left: 10px
+        padding-right: 10px
+    &__banner
+        min-height: 452px
+        background-image: url("../img/blog__banner.jpg")
+        background-repeat: no-repeat
+        background-size: cover
+        position: relative
+        margin-top: 45px
+    &__intro
+        width: 500px
+        height: 275px
+        background-color: $white
+        position: absolute
+        bottom: -96px
+        left: 50%
+        transform: translateX(-50%)
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)
+        border-radius: 37px 37px 0 0
+        padding-top: 48px
+        padding-bottom: 48px
+        padding-left: 71px
+        padding-right: 71px
     &__items
         display: flex
         justify-content: center
         align-items: center
         gap: 25px
+        flex-flow: row wrap
     &__heading
         &__title
             font-size: 50px
@@ -200,13 +264,14 @@ a
         &:hover
             cursor: pointer
             background-color: $light-brown
-            .blog__item__btn
+            .btn__date
                 background-color: $white
         &__btn
             padding: 20px 20px
             width: 52px
             height: 52px
         &__img
+            position: relative
             img
                 border-radius: 29px 29px 0 0
         &__text
@@ -228,7 +293,8 @@ a
     display: flex
     justify-content: space-between
     align-items: flex-start
-    min-height: 437px
+    min-height: 300px
+    margin-top: 200px
     &__interno
     &__logo
     &__socials
@@ -258,3 +324,78 @@ a
         &__item
             display: inline-block
             margin-top: 35px
+
+.posts
+    margin-top: calc(104px + 96px)
+    &__title
+        margin: 0
+        font-size: 25px
+        color: $black
+    &__text
+        font-size: 22px
+        font-family: $jost-font
+        margin-top: 22px
+        color: $light-black
+    &__content
+        margin-top: 27px
+        display: flex
+        align-items: center
+        gap: 65px
+        border: 1px solid $border
+        border-radius: 28px
+        padding: 22px 22px
+    &__subcontent
+        align-self: start
+    &__img
+        border-radius: 28px
+    &__btn
+        width: 52px
+        height: 52px
+        padding: 20px 20px
+        &::after
+            content: none
+    &__other
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-top: 41px
+.pagination
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 20px
+    counter-reset: page 0
+    &__page
+        border-radius: 50%
+        padding: 17px 17px
+        border: 1px solid $brown
+        cursor: pointer
+        width: 52px
+        height: 52px
+        &_num
+            position: relative
+            &::after
+                position: absolute
+                content: counter(page)
+                counter-increment: page
+                width: 20px
+                height: 20px
+                top: 50%
+                left: 40%
+                transform: translateY(-50%)
+
+        &:hover
+            background-color: $light-brown
+            border-color: $light-brown
+        &_arrow-right
+            position: relative
+            &::after
+                position: absolute
+                content: ''
+                width: 20px
+                height: 20px
+                background-image: url(../img/arrow-btn-right.svg)
+                background-repeat: no-repeat
+                top: 50%
+                left: 40%
+                transform: translateY(-50%)
