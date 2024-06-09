@@ -399,3 +399,87 @@ a
                 top: 50%
                 left: 40%
                 transform: translateY(-50%)
+.blog-details
+    margin-top: 45px
+    margin-bottom: 200px
+    &__banner
+        background-image: url(../img/blog-details-banner.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        width: 100%
+        min-height: 351px
+    &-articles
+        display: flex
+        justify-content: center
+        gap: 52px
+.tags
+    width: 345px
+    &__title
+        font-size: 25px
+        color: $black
+        padding-bottom: 24px
+        margin: 0
+    &__buttons
+        display: flex
+        flex-flow: row wrap
+        gap: 10px
+    &__button
+        background-color: $grey
+        border: none
+        padding: 9px 30px
+        border-radius: 9px
+        cursor: pointer
+        transition: all .3s ease
+        &_active
+            background-color: $black
+            color: $white
+.blog-details-articles
+    &__img
+        border-radius: 28px
+        margin-top: 21px
+        width: 100%
+        height: 600px
+    &__other
+        display: flex
+        align-items: center
+        margin-bottom: 48px
+        justify-content: space-between
+        margin-top: 46px
+    &__date
+        font-size: 16px
+        font-weight: 400
+        color: $light-black
+    &__articles
+        width: 800px
+    &__article
+        font-family: $jost-font
+        font-size: 22px
+        color: $light-black
+.breadcrumbs
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 16px
+    font-family: $jost-font
+    &__li
+        position: relative
+    &__link:not(:last-child)::after
+        content: '/'
+        display: inline-flex
+        padding-right: 8px
+        padding-left: 8px
+.quote
+    background-color: $grey
+    min-height: 267px
+    border-radius: 28px
+    margin: 0
+    padding: 53px 227px
+    color: $brown
+    font-size: 25px
+    margin-top: 30px
+    margin-bottom: 30px
+    &__svg
+        transform: rotate(180deg)
+        width: 100px
+        & path
+            fill: $brown
