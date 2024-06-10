@@ -84,6 +84,31 @@ a
             width: 433px
             margin-bottom: 21px
 
+.btn
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    width: 70px
+    height: 70px
+    padding: 26px 26px
+    border: none
+    cursor: pointer
+    background-color: #F4F0EC
+    position: relative
+    transition: color .3s ease
+    &::after
+        content: ''
+        position: absolute
+        display: block
+        top: 50%
+        left: 40%
+        transform: translateY(-50%)
+        width: 20px
+        height: 20px
+        background-image: url(../img/arrow-btn-right.svg)
+        background-repeat: no-repeat
+
 .banner__btn
     display: flex
     padding: 26px 48px

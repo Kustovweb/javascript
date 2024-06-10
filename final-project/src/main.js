@@ -1,5 +1,11 @@
 import { createApp } from 'vue'
 import './assets/style.sass'
 import App from './App.vue'
+const app = createApp(App)
+import components from './UI'
 
-createApp(App).mount('#app')
+components.forEach(component => {
+    app.component(component.name, component)
+})
+
+app.mount('#app')
