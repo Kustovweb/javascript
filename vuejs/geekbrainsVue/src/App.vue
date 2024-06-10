@@ -1,10 +1,10 @@
 <script setup>
-import hw2 from './components/hw2.vue'
+import LessonComp from './components/LessonComp.vue';
 </script>
 
 <template>
   <div class="wrapper">
-    <hw2 />
+    <lesson-comp></lesson-comp>
   </div>
 </template>
 

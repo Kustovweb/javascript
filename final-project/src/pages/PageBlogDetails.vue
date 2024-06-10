@@ -38,3 +38,13 @@
             <footer-temp></footer-temp>
         </div>
 </template>
+
+<script>
+export default {
+    
+}
+</script>
+
+<style lang="sass">
+    
+</style>
