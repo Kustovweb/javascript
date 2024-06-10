@@ -1,5 +1,7 @@
 <template>
-    <button class="btn"></button>
+    <button class="btn">
+        <icon-right></icon-right>
+    </button>
 </template>
 
 <script>

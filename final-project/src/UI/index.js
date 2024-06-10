@@ -3,10 +3,12 @@ import IconArrowRight from "../components/icons/IconArrowRight.vue"
 import IconLinkedin from "../components/icons/IconLinkedin.vue"
 import IconTwitter from "../components/icons/IconTwitter.vue"
 import IconLogo from "../components/icons/IconLogo.vue"
+import IconQuote from "../components/icons/IconQuote.vue"
 export default [
     ButtonArrowRight,
     IconArrowRight,
     IconTwitter,
     IconLinkedin,
-    IconLogo
+    IconLogo,
+    IconQuote
 ]
