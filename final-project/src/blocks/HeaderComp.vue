@@ -14,6 +14,7 @@
 
 <script>
 export default {
+    name: 'header-temp',
     data() {
             return {
                 headerLinks: [

@@ -37,7 +37,7 @@
 
 <script>
  export default {
-        name: 'FooterComp'
+        name: 'footer-temp'
 
  }
 </script>

@@ -1,10 +1,11 @@
 <script setup>
 import LessonComp from './components/LessonComp.vue';
+import ProductDetails from './components/ProductDetails.vue'
 </script>
 
 <template>
   <div class="wrapper">
-    <lesson-comp></lesson-comp>
+    <product-details></product-details>
   </div>
 </template>
 
