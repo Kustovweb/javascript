@@ -1,11 +1,10 @@
 <script setup>
-import LessonComp from './components/LessonComp.vue';
-import ProductDetails from './components/ProductDetails.vue'
+  import UserList from './components/UserList.vue'
 </script>
 
 <template>
   <div class="wrapper">
-    <product-details></product-details>
+    <UserList />
   </div>
 </template>
 

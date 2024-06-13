@@ -1,8 +1,7 @@
 <template>
    <header class="header center">
         <div class="header__left">
-            <a class="logo" href="#"><img src="/img/logo.svg" alt="" width="34"
-                    height="34"><span>Interno</span></a>
+            <a class="logo" href="#"><IconLogo /><span>Interno</span></a>
         </div>
         <div class="header__right">
             <ul class="header__menu">
@@ -13,7 +12,11 @@
 </template>
 
 <script>
+import IconLogo from '../components/icons/IconLogo.vue';
 export default {
+    components: {
+        IconLogo
+    },
     name: 'header-temp',
     data() {
             return {

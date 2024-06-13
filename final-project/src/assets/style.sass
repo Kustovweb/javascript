@@ -58,9 +58,6 @@ a
     color: $black
     font-weight: 400
     margin: 0
-.banner
-    width: 100%
-    margin-top: 57px
 
     &__content
         background-image: url('../img/banner.png')
@@ -84,8 +81,9 @@ a
             width: 433px
             margin-bottom: 21px
 
-.banner__btn
+.main__btn
     display: flex
+    align-items: center
     padding: 26px 48px
     background-color: $black
     color: $white
@@ -136,6 +134,7 @@ a
         font-size: 22px
         font-weight: 400
         font-family: $jost-font
+        color: $light-black
     &__btn
         display: flex
         align-items: center
@@ -143,7 +142,6 @@ a
         border-radius: 50%
         width: 70px
         height: 70px
-        padding: 26px 26px
         border: none
         cursor: pointer
         background-color: $grey
@@ -215,7 +213,7 @@ a
         padding-right: 71px
     &__items
         display: flex
-        justify-content: center
+        justify-content: flex-start
         align-items: center
         gap: 25px
         flex-flow: row wrap
@@ -239,7 +237,7 @@ a
         &:hover
             cursor: pointer
             background-color: $light-brown
-            .btn__date
+            .active
                 background-color: $white
         &__btn
             padding: 20px 20px
@@ -450,8 +448,3 @@ a
     font-size: 25px
     margin-top: 30px
     margin-bottom: 30px
-    &__svg
-        transform: rotate(180deg)
-        width: 100px
-        & path
-            fill: $brown

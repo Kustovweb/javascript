@@ -2,8 +2,8 @@
      <footer class="footer center">
         <div class="footer__interno">
             <div class="footer__logo">
-                <a class="logo" href="#"><img src="/img/logo.svg" alt="" width="34"
-                        height="34"><span>Interno</span></a>
+                <a class="logo" href="#"><IconLogo /><span>Interno</span></a>
+                        
             </div>
             <div class="footer__socials">
                 <a href="#" class="footer__icon__twitter">
@@ -36,8 +36,12 @@
 </template>
 
 <script>
+import IconLogo from '../components/icons/IconLogo.vue'
  export default {
-        name: 'footer-temp'
+        name: 'footer-temp',
+        components: {
+            IconLogo
+        }
 
  }
 </script>

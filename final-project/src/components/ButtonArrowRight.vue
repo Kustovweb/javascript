@@ -1,12 +1,44 @@
 <template>
-    <button class="btn">
-        <icon-right></icon-right>
+    <button class="btn" :style="buttonStyle" :class="classItem">
+        <IconArrowRight icon-name="arrow-right" :width="iconWidth" :height="iconHeght"/>
     </button>
 </template>
 
 <script>
+import IconArrowRight from './icons/IconArrowRight.vue'
 export default {
-    name: 'button-right'
+    name: 'button-right',
+    components: {
+        IconArrowRight
+    },
+    data() {
+        return {
+            buttonStyle: {
+                width: this.width,
+                height: this.height,
+            }
+        }
+    },
+    props: {
+        width: {
+            type: [Number, String],
+            default: 70
+        },
+        height: {
+            type: [Number, String],
+            default: 70
+        },
+        iconWidth: {
+            type: [Number, String]
+        },
+        iconHeght: {
+            type: [Number, String]
+        },
+        classItem: {
+            type: String,
+        }
+
+    }
 }
 </script>
 
@@ -18,10 +50,9 @@ export default {
     border-radius: 50%
     width: 70px
     height: 70px
-    padding: 26px 26px
     border: none
     cursor: pointer
     background-color: #F4F0EC
     position: relative
-    transition: color .3s ease
+    transition: all .3s ease
 </style>

@@ -82,7 +82,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -344,7 +344,8 @@ template {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -386,6 +387,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
 .header__menu {
   list-style: none;
   display: flex;
@@ -394,6 +396,7 @@ a {
   font-family: "Jost", sans-serif;
   font-size: 20px;
 }
+
 .header__menu__item a {
   color: inherit;
 }
@@ -419,6 +422,7 @@ a {
   width: 100%;
   margin-top: 57px;
 }
+
 .banner__content {
   background-image: url("../img/banner.png");
   background-repeat: no-repeat;
@@ -430,11 +434,13 @@ a {
   padding-left: 52px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
+
 .banner__content__h1 {
   font-size: 65px;
   margin-bottom: 18px;
   font-weight: 400;
 }
+
 .banner__content__p {
   font-family: "Jost", sans-serif;
   font-size: 22px;
@@ -457,6 +463,7 @@ a {
   position: relative;
   transition: color 0.3s ease;
 }
+
 .btn::after {
   content: "";
   position: absolute;
@@ -486,6 +493,7 @@ a {
 .project {
   margin-top: 96px;
 }
+
 .project__items {
   margin-top: 93px;
   display: grid;
@@ -493,9 +501,11 @@ a {
   grid-auto-rows: 1fr;
   gap: 104px;
 }
+
 .project__item {
   width: 525px;
 }
+
 .project__item__text {
   display: flex;
   justify-content: space-between;
@@ -503,33 +513,41 @@ a {
   font-family: "Jost", sans-serif;
   font-size: 22px;
 }
+
 .project__item__img {
   width: 525px;
   height: 548px;
   display: block;
 }
+
 .project__item__img_br-top-right img {
   border-radius: 0 29px 0 0;
 }
+
 .project__item__img_br-top-left img {
   border-radius: 29px 0 0 0;
 }
+
 .project__item__img_br-bottom-right img {
   border-radius: 0 0 29px 0;
 }
+
 .project__item__img_br-bottom-left img {
   border-radius: 0 0 0 29px;
 }
+
 .project__heading {
   font-size: 50px;
   font-weight: 400;
   margin-bottom: 8px;
 }
+
 .project__subheading {
   font-size: 22px;
   font-weight: 400;
   font-family: "Jost", sans-serif;
 }
+
 .project__btn {
   display: flex;
   align-items: center;
@@ -550,6 +568,7 @@ a {
   padding-top: 151px;
   padding-bottom: 151px;
 }
+
 .counter-list {
   list-style: none;
   display: flex;
@@ -557,9 +576,11 @@ a {
   justify-content: space-around;
   margin: 0;
 }
+
 .counter-list__item {
   position: relative;
 }
+
 .counter-list__item:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -569,11 +590,13 @@ a {
   height: 130px;
   background-color: #CDA274;
 }
+
 .counter-list__item__num {
   font-size: 85px;
   color: #CDA274;
   margin-bottom: 16px;
 }
+
 .counter-list__item__text {
   font-size: 22px;
   font-family: "Jost", sans-serif;
@@ -584,6 +607,7 @@ a {
   margin-bottom: 50px;
   margin-top: 96px;
 }
+
 .blog__tag {
   position: absolute;
   bottom: 22px;
@@ -597,6 +621,7 @@ a {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .blog__banner {
   min-height: 452px;
   background-image: url("../img/blog__banner.jpg");
@@ -605,6 +630,7 @@ a {
   position: relative;
   margin-top: 45px;
 }
+
 .blog__intro {
   width: 500px;
   height: 275px;
@@ -620,6 +646,7 @@ a {
   padding-left: 71px;
   padding-right: 71px;
 }
+
 .blog__items {
   display: flex;
   justify-content: center;
@@ -627,6 +654,7 @@ a {
   gap: 25px;
   flex-flow: row wrap;
 }
+
 .blog__heading__title {
   font-size: 50px;
   color: #292F36;
@@ -634,11 +662,13 @@ a {
   line-height: 125%;
   font-weight: 400;
 }
+
 .blog__heading__subtitle {
   font-size: 22px;
   color: #4D5053;
   margin-top: 12px;
 }
+
 .blog__item {
   padding: 21px 21px;
   width: 382px;
@@ -646,38 +676,47 @@ a {
   border-radius: 29px;
   transition: all 0.3s ease;
 }
+
 .blog__item:hover {
   cursor: pointer;
   background-color: #f4f0ec;
 }
+
 .blog__item:hover .btn__date {
   background-color: #fff;
 }
+
 .blog__item__btn {
   padding: 20px 20px;
   width: 52px;
   height: 52px;
 }
+
 .blog__item__img {
   position: relative;
 }
+
 .blog__item__img img {
   border-radius: 29px 29px 0 0;
 }
+
 .blog__item__text {
   font-size: 25px;
   color: #292F36;
 }
+
 .blog__item__subcontent__date {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .blog__item__subcontent__date__text {
   font-family: "Jost", sans-serif;
   color: #4D5053;
 }
+
 .blog__item__subcontent__text {
   font-size: 25px;
   color: #292F36;
@@ -690,33 +729,41 @@ a {
   min-height: 300px;
   margin-top: 200px;
 }
+
 .footer__socials {
   margin-top: 31px;
 }
+
 .footer__icon__twitter {
   margin-right: 54px;
 }
+
 .footer__pages__item {
   font-family: "Jost", sans-serif;
   font-size: 22px;
   margin-bottom: 30px;
 }
+
 .footer__pages__title {
   font-size: 25px;
 }
+
 .footer__pages__items {
   list-style: none;
   padding: 0;
 }
+
 .footer__contact__title {
   font-size: 25px;
   margin-bottom: 25px;
 }
+
 .footer__contact__address {
   font-size: 22px;
   font-family: "Jost", sans-serif;
   font-style: normal;
 }
+
 .footer__contact__item {
   display: inline-block;
   margin-top: 35px;
@@ -725,17 +772,20 @@ a {
 .posts {
   margin-top: 200px;
 }
+
 .posts__title {
   margin: 0;
   font-size: 25px;
   color: #292F36;
 }
+
 .posts__text {
   font-size: 22px;
   font-family: "Jost", sans-serif;
   margin-top: 22px;
   color: #4D5053;
 }
+
 .posts__content {
   margin-top: 27px;
   display: flex;
@@ -745,20 +795,25 @@ a {
   border-radius: 28px;
   padding: 22px 22px;
 }
+
 .posts__subcontent {
   align-self: start;
 }
+
 .posts__img {
   border-radius: 28px;
 }
+
 .posts__btn {
   width: 52px;
   height: 52px;
   padding: 20px 20px;
 }
+
 .posts__btn::after {
   content: none;
 }
+
 .posts__other {
   display: flex;
   align-items: center;
@@ -773,6 +828,7 @@ a {
   gap: 20px;
   counter-reset: page 0;
 }
+
 .pagination__page {
   border-radius: 50%;
   padding: 17px 17px;
@@ -781,9 +837,11 @@ a {
   width: 52px;
   height: 52px;
 }
+
 .pagination__page_num {
   position: relative;
 }
+
 .pagination__page_num::after {
   position: absolute;
   content: counter(page);
@@ -794,13 +852,16 @@ a {
   left: 40%;
   transform: translateY(-50%);
 }
+
 .pagination__page:hover {
   background-color: #f4f0ec;
   border-color: #f4f0ec;
 }
+
 .pagination__page_arrow-right {
   position: relative;
 }
+
 .pagination__page_arrow-right::after {
   position: absolute;
   content: "";
@@ -817,6 +878,7 @@ a {
   margin-top: 45px;
   margin-bottom: 200px;
 }
+
 .blog-details__banner {
   background-image: url(../img/blog-details-banner.jpg);
   background-repeat: no-repeat;
@@ -824,6 +886,7 @@ a {
   width: 100%;
   min-height: 351px;
 }
+
 .blog-details-articles {
   display: flex;
   justify-content: center;
@@ -833,17 +896,20 @@ a {
 .tags {
   width: 345px;
 }
+
 .tags__title {
   font-size: 25px;
   color: #292F36;
   padding-bottom: 24px;
   margin: 0;
 }
+
 .tags__buttons {
   display: flex;
   flex-flow: row wrap;
   gap: 10px;
 }
+
 .tags__button {
   background-color: #F4F0EC;
   border: none;
@@ -852,6 +918,7 @@ a {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .tags__button_active {
   background-color: #292F36;
   color: #fff;
@@ -863,6 +930,7 @@ a {
   width: 100%;
   height: 600px;
 }
+
 .blog-details-articles__other {
   display: flex;
   align-items: center;
@@ -870,14 +938,17 @@ a {
   justify-content: space-between;
   margin-top: 46px;
 }
+
 .blog-details-articles__date {
   font-size: 16px;
   font-weight: 400;
   color: #4D5053;
 }
+
 .blog-details-articles__articles {
   width: 800px;
 }
+
 .blog-details-articles__article {
   font-family: "Jost", sans-serif;
   font-size: 22px;
@@ -891,9 +962,11 @@ a {
   font-size: 16px;
   font-family: "Jost", sans-serif;
 }
+
 .breadcrumbs__li {
   position: relative;
 }
+
 .breadcrumbs__link:not(:last-child)::after {
   content: "/";
   display: inline-flex;
@@ -912,10 +985,14 @@ a {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 .quote__svg {
   transform: rotate(180deg);
   width: 100px;
 }
+
 .quote__svg path {
   fill: #CDA274;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,53 +1,54 @@
 <template>
     <div class="wrapper">
-            <header-temp></header-temp>
-            <main class="main">
-                <section class="blog-details">
-                    <div class="blog-details__banner">
-                    </div>
-                </section>
-                <section class="blog-details-articles center">
-                    <div class="blog-details-articles__articles">
-                        <template v-for="article in filter" :key="article.id">
-                            <h2 class="heading">{{ article.title }}
-                            </h2>
-                            <img class="blog-details-articles__img" :src="article.img" alt="">
-                            <div class="blog-details-articles__other">
-                                <span class="blog-details-articles__date">{{ article.date }}</span>
-                                <div class="breadcrumbs">
-                                    <a class="breadcrumbs__link" href="#">Интерьер</a>
-                                    <a class="breadcrumbs__link" href="#">Домой</a>
-                                    <a class="breadcrumbs__link" href="#">Декор</a>
-                                </div>
-                            </div>
-                            <p class="blog-details-articles__article"><a href="#">
-                                    {{ article.article }}
-                                </a></p>
-                            <blockquote class="quote text-center">
-                                <svg class="quote__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                    <path
-                                        d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
-                                </svg>
-                                <p>цитата</p>
-                            </blockquote>
-                        </template>
-                    </div>
-                    <tags @ontags="filteredArticles"></tags>
-                </section>
-            </main>
-            <footer-temp></footer-temp>
-        </div>
+        <header-temp></header-temp>
+        <main class="main">
+            <section class="blog-details">
+                <div class="blog-details__banner">
+                </div>
+            </section>
+            <section class="blog-details-articles center">
+                <div class="blog-details-articles__articles">
+                    <template v-for="article in filter" :key="article.id">
+                        <h2 class="heading">{{ article.title }}
+                        </h2>
+                        <img class="blog-details-articles__img" :src="article.img" alt="">
+                        <div class="blog-details-articles__other">
+                            <span class="blog-details-articles__date">{{ article.date }}</span>
+                            <BreadCrumbs />
+                        </div>
+                        <p class="blog-details-articles__article"><a href="#">
+                                {{ article.article }}
+                            </a></p>
+                        <blockquote class="quote text-center">
+                            <IconQuote id="icon-quote" :width="100" :height="133" />
+                            <p>цитата</p>
+                        </blockquote>
+                    </template>
+                </div>
+                <tags @ontags="filteredArticles"></tags>
+            </section>
+        </main>
+        <footer-temp></footer-temp>
+    </div>
 </template>
 
 <script>
+import BreadCrumbs from '../components/BreadCrumbs.vue';
+import IconQuote from '../components/icons/IconQuote.vue'
+import Tags from '../blocks/TagsComp.vue'
 export default {
+    components: {
+        IconQuote,
+        BreadCrumbs,
+        Tags
+    },
     data() {
         return {
             tagName: "",
             blog: [
                 {
                     id: 1,
-                    img: "assets/img/blog1.png",
+                    img: "/img/blog1.png",
                     imgAlt: "blogImg",
                     title: "Создадим лучший макет перепланировки",
                     tag: "Планировка",
@@ -57,7 +58,7 @@ export default {
                 },
                 {
                     id: 2,
-                    img: "assets/img/blog2.png",
+                    img: "/img/blog2.png",
                     imgAlt: "blogImg",
                     title: "Лучшие интерьерные идеи по низкой цене",
                     tag: "Архитектура",
@@ -67,7 +68,7 @@ export default {
                 },
                 {
                     id: 3,
-                    img: "assets/img/blog3.png",
+                    img: "/img/blog3.png",
                     imgAlt: "blogImg",
                     title: "Лучшие интерьерные решения для офисов",
                     tag: "Планировка",
@@ -77,7 +78,7 @@ export default {
                 },
                 {
                     id: 4,
-                    img: "assets/img/blog4.png",
+                    img: "/img/blog4.png",
                     imgAlt: "blogImg",
                     title: "Создадим лучший макет перепланировки",
                     tag: "Кухня",
@@ -87,7 +88,7 @@ export default {
                 },
                 {
                     id: 5,
-                    img: "assets/img/blog5.png",
+                    img: "/img/blog5.png",
                     imgAlt: "blogImg",
                     title: "Лучшие интерьерные идеи по низкой цене",
                     tag: "Зал",
@@ -97,7 +98,7 @@ export default {
                 },
                 {
                     id: 6,
-                    img: "assets/img/blog6.png",
+                    img: "/img/blog6.png",
                     imgAlt: "blogImg",
                     title: "Лучшие интерьерные решения для офисов",
                     tag: "Здание",
@@ -107,7 +108,7 @@ export default {
                 },
                 {
                     id: 7,
-                    img: "assets/img/blog6.png",
+                    img: "/img/blog6.png",
                     imgAlt: "blogImg",
                     title: "Лучшие интерьерные решения для спален",
                     tag: "Спальня",
@@ -137,11 +138,11 @@ export default {
             }
         }
     }
-    
+
 }
 
 </script>
 
 <style lang="sass">
-    
+
 </style>

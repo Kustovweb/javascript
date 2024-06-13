@@ -1,7 +1,9 @@
 <template>
-   <svg :id="iconName" :width="width" :height="height" viewBox="0 0 34 34" :fill="iconColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>
-</svg>
+   <svg :id="iconName" :width="width" :height="height" viewBox="0 0 18 17" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
+    :stroke="iconColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+    </svg>
 </template>
 
 <script>
@@ -21,8 +23,12 @@
             },
             iconColor: {
             type: String,
-            default: 'currentColor'
+            default: '#CDA274'
     }
         }
     }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
