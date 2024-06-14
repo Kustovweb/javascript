@@ -1,15 +1,12 @@
 <template>
 
     <div class="wrapper">
-        <header-temp></header-temp>
+        <HeaderComp />
         <main class="main">
             <section class="blog__banner">
                 <div class="blog__intro">
                     <h2 class="heading">Статьи &amp;<br> Новости</h2>
-                    <div class="blog__breadcrumbs text-center">
-                        <p><a href="#">Домой /</a></p>
-                        <p><a href="#">Блог</a></p>
-                    </div>
+                    <BreadCrumbs />
                 </div>
             </section>
             <section class="posts center">
@@ -40,18 +37,18 @@
             </section>
             <section class="blog center">
                 <div class="blog__items">
-                    <template v-for="item, key of blog" :key="key">
+                    <template v-for="item, key of getDataBlog" :key="key.id">
                         <div class="blog__item">
                             <div class="blog__item__img">
                                 <img :src="item.img" :alt="item.imgAlt">
                                 <p class="blog__tag">{{ item.tag }}</p>
                             </div>
                             <div class="blog__item__subcontent">
-                                <p class="blog__item__subcontent__text">{{ item.text }}</p>
+                                <p class="blog__item__subcontent__text">{{ item.title }}</p>
                             </div>
                             <div class="blog__item__subcontent__date">
                                 <span class="blog__item__subcontent__date__text">{{ item.date }}</span>
-                                <button class="btn btn__date"></button>
+                                <ButtonArrowRight classItem="active" />
                             </div>
                         </div>
                     </template>
@@ -59,115 +56,40 @@
             </section>
             <PaginationComp />
         </main>
-        <footer-temp></footer-temp>
+        <FooterComp />
     </div>
 
 </template>
 
 <script>
+import FooterComp from '../blocks/FooterComp.vue';
+import HeaderComp from '../blocks/HeaderComp.vue';
+import BannerComp from '../components/BannerComp.vue';
+import BreadCrumbs from '../components/BreadCrumbs.vue';
+import ButtonArrowRight from '../components/ButtonArrowRight.vue';
 import PaginationComp from '../components/PaginationComp.vue';
-
+import { mapGetters } from 'vuex';
 export default {
-    components: PaginationComp,
+    components: {
+        PaginationComp,
+        HeaderComp,
+        FooterComp,
+        BannerComp,
+        BreadCrumbs,
+        ButtonArrowRight
+    },
     data() {
         return {
-            tagName: "",
-            blog: [
-                {
-                    id: 1,
-                    img: "assets/img/blog1.png",
-                    imgAlt: "blogImg",
-                    title: "Создадим лучший макет перепланировки",
-                    tag: "Планировка",
-                    date: "26 Декабрь,2022 ",
-                    article: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad atque blanditiis placeat in ipsa ratione. Ut possimus aut delectus, maiores recusandae quisquam error voluptatum molestiae repudiandae eaque, tempore rem neque?"
-
-                },
-                {
-                    id: 2,
-                    img: "assets/img/blog2.png",
-                    imgAlt: "blogImg",
-                    title: "Лучшие интерьерные идеи по низкой цене",
-                    tag: "Архитектура",
-                    date: "22 декабрь,2022",
-                    article: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, est! In nihil ullam veniam est enim repellendus quaerat ut quas alias, sed expedita a vero quam beatae vel consequuntur iusto?"
-
-                },
-                {
-                    id: 3,
-                    img: "assets/img/blog3.png",
-                    imgAlt: "blogImg",
-                    title: "Лучшие интерьерные решения для офисов",
-                    tag: "Планировка",
-                    date: "25 Декабрь,2022",
-                    article: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita architecto ducimus eius, corporis laboriosam nesciunt perspiciatis nostrum velit est magni animi nobis omnis exercitationem odit suscipit. Architecto porro debitis quam."
-
-                },
-                {
-                    id: 4,
-                    img: "assets/img/blog4.png",
-                    imgAlt: "blogImg",
-                    title: "Создадим лучший макет перепланировки",
-                    tag: "Кухня",
-                    date: "26 Декабрь,2023",
-                    article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, error? Quasi recusandae magni deleniti, expedita repellendus illum nulla doloremque aperiam neque! Optio libero eum et eligendi natus quod rem distinctio!"
-
-                },
-                {
-                    id: 5,
-                    img: "assets/img/blog5.png",
-                    imgAlt: "blogImg",
-                    title: "Лучшие интерьерные идеи по низкой цене",
-                    tag: "Зал",
-                    date: "22 Декабрь,2022",
-                    article: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam blanditiis consequuntur ad hic unde obcaecati doloribus cum, soluta quaerat dolorum in culpa saepe recusandae nam modi sint magnam similique eaque!"
-
-                },
-                {
-                    id: 6,
-                    img: "assets/img/blog6.png",
-                    imgAlt: "blogImg",
-                    title: "Лучшие интерьерные решения для офисов",
-                    tag: "Здание",
-                    date: "25 Декабрь,2022",
-                    article: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure quas aliquid expedita rerum ullam eos numquam necessitatibus vero sed excepturi nisi fugiat explicabo voluptatem, quos corrupti alias labore nobis? Tempora!"
-
-                },
-                {
-                    id: 7,
-                    img: "assets/img/blog6.png",
-                    imgAlt: "blogImg",
-                    title: "Лучшие интерьерные решения для спален",
-                    tag: "Спальня",
-                    date: "25 Декабрь,2022",
-                    article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
-
-                }
-
-
-            ],
-
         }
     },
     methods: {
-        filteredArticles(tagName) {
-            if (tagName) {
-                this.tagName = tagName;
-            }
-        }
+
     },
     computed: {
-        filter() {
-            if (this.tagName) {
-                return this.blog.filter(item => item.tag === this.tagName);
-            } else {
-                return this.blog
-            }
-        }
+        ...mapGetters(["getDataBlog"]),
     }
 }
 </script>
 
 <<style lang="sass">
-
     </style>>

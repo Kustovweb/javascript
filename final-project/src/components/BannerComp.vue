@@ -1,7 +1,7 @@
 <template>
-    <div class="banner" :style="{ backgroundImage: urlImg }">
-        <div class="banner__intro"><span class="banner__text">{{ bannerText }}</span>
-            <BreadCrumbs />
+    <div class="banner" :style="{ backgroundImage: `url(${urlImg})` }">
+        <div class="banner__intro" v-if="banner"><span class="banner__text">{{ bannerText }}</span>
+            <BreadCrumbs v-if="banner" />
         </div>
     </div>
 </template>
@@ -9,9 +9,6 @@
 <script>
 import BreadCrumbs from './BreadCrumbs.vue';
 export default {
-    components: {
-        BreadCrumbs
-    },
     name: 'banner-comp',
     props: {
         urlImg: {
@@ -22,7 +19,12 @@ export default {
             type: String,
             required: false,
             default: ""
-        }
+        },
+        banner: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
     },
 
 }

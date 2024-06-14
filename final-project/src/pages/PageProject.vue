@@ -1,11 +1,12 @@
 <template>
+    <HeaderComp />
     <main class="main">
         <div class="page-project">
             <BannerComp :urlImg="bannerUrl" bannerText="Наш проект" />
             <section class="categories center">
                 <nav class="categories__nav">
                     <span @click="filteredArticles(nav.tag)" class="categories__nav-item"
-                        v-for="nav in projectListTag">{{ nav.tag }}</span>
+                        v-for="nav in dataProjectListTag">{{ nav.tag }}</span>
                 </nav>
             </section>
             <section class="page-project__list center">
@@ -23,74 +24,31 @@
             <PaginationComp />
         </div>
     </main>
+    <FooterComp />
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import BannerComp from '../components/BannerComp.vue';
 import BreadCrumbs from '../components/BreadCrumbs.vue';
 import ButtonArrowRight from '../components/ButtonArrowRight.vue'
 import PaginationComp from '../components/PaginationComp.vue'
+import FooterComp from '../blocks/FooterComp.vue';
+import HeaderComp from '../blocks/HeaderComp.vue';
 export default {
     components: {
         BannerComp,
         BreadCrumbs,
         ButtonArrowRight,
-        PaginationComp
+        PaginationComp,
+        FooterComp,
+        HeaderComp
     },
     data() {
         return {
             currentTagName: "",
-            bannerUrl: `url(/img/bg-project-page.png)`,
-            projectListTag: [
-                {
-                    tag: 'Спальня'
-                },
-                {
-                    tag: 'Ванная комната'
-                },
-                {
-                    tag: 'Кухня'
-                },
-                {
-                    tag: 'Гостиная'
-                }
+            bannerUrl: `/img/bg-project-page.png`,
 
-            ],
-            projectList: [
-                {
-                    id: 1,
-                    url: "/img/project1.png",
-                    imgAlt: "projectImg",
-                    title: "Современная Спальня",
-                    tag: 'Спальня'
-
-
-                },
-                {
-                    id: 2,
-                    url: "/img/project2.png",
-                    imgAlt: "projectImg",
-                    title: "Ванная",
-                    tag: 'Ванная комната'
-
-                },
-                {
-                    id: 3,
-                    url: "/img/project3.png",
-                    imgAlt: "projectImg",
-                    title: "Современная Кухня",
-                    tag: 'Кухня'
-
-                },
-                {
-                    id: 4,
-                    url: "/img/project4.png",
-                    imgAlt: "projectImg",
-                    title: "Гостинная",
-                    tag: 'Гостиная'
-
-                }
-            ],
         }
 
     },
@@ -102,11 +60,12 @@ export default {
         }
     },
     computed: {
+        ...mapGetters(["dataProjectListTag", "dataProjectList"]),
         filter() {
             if (this.currentTagName) {
-                return this.projectList.filter(item => item.tag === this.currentTagName);
+                return this.dataProjectList.filter(item => item.tag === this.currentTagName);
             } else {
-                return this.projectList
+                return this.dataProjectList
             }
         }
     }
