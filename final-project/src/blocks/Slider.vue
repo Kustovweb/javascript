@@ -62,7 +62,7 @@ export default {
 
 .swiper {
     width: 100%;
-    height: 30px;
+    height: 300px;
     margin: 20px 0;
     position: relative;
 }
