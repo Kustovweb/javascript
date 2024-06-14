@@ -1,32 +1,28 @@
 <template>
-    <div class="wrapper">
-        <HeaderComp />
-        <main class="main">
-            <BannerComp urlImg="img/blog-details-banner.jpg" />
-            <section class="blog-details-articles center">
-                <div class="blog-details-articles__articles">
-                    <template v-for="article in filter" :key="article.id">
-                        <h2 class="heading">{{ article.title }}
-                        </h2>
-                        <img class="blog-details-articles__img" :src="article.img" alt="">
-                        <div class="blog-details-articles__other">
-                            <span class="blog-details-articles__date">{{ article.date }}</span>
-                            <BreadCrumbs />
-                        </div>
-                        <p class="blog-details-articles__article"><a href="#">
-                                {{ article.article }}
-                            </a></p>
-                        <blockquote class="quote text-center">
-                            <IconQuote id="icon-quote" :width="100" :height="133" />
-                            <p>цитата</p>
-                        </blockquote>
-                    </template>
-                </div>
-                <tags @ontags="filteredArticles"></tags>
-            </section>
-        </main>
-        <FooterComp />
-    </div>
+    <main class="main">
+        <BannerComp urlImg="img/blog-details-banner.jpg" />
+        <section class="blog-details-articles center">
+            <div class="blog-details-articles__articles">
+                <template v-for="article in filter" :key="article.id">
+                    <h2 class="heading">{{ article.title }}
+                    </h2>
+                    <img class="blog-details-articles__img" :src="article.img" alt="">
+                    <div class="blog-details-articles__other">
+                        <span class="blog-details-articles__date">{{ article.date }}</span>
+                        <BreadCrumbs />
+                    </div>
+                    <p class="blog-details-articles__article"><a href="#">
+                            {{ article.article }}
+                        </a></p>
+                    <blockquote class="quote text-center">
+                        <IconQuote id="icon-quote" :width="100" :height="133" />
+                        <p>цитата</p>
+                    </blockquote>
+                </template>
+            </div>
+            <tags @ontags="filteredArticles"></tags>
+        </section>
+    </main>
 </template>
 
 <script>
@@ -34,16 +30,12 @@ import BreadCrumbs from '../components/BreadCrumbs.vue';
 import IconQuote from '../components/icons/IconQuote.vue'
 import Tags from '../blocks/TagsComp.vue'
 import { mapGetters } from 'vuex/dist/vuex.cjs.js';
-import HeaderComp from '../blocks/HeaderComp.vue';
-import FooterComp from '../blocks/FooterComp.vue';
 import BannerComp from '../components/BannerComp.vue';
 export default {
     components: {
         IconQuote,
         BreadCrumbs,
         Tags,
-        HeaderComp,
-        FooterComp,
         BannerComp
     },
     data() {

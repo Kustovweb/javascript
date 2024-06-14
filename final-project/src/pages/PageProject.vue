@@ -1,5 +1,4 @@
 <template>
-    <HeaderComp />
     <main class="main">
         <div class="page-project">
             <BannerComp :urlImg="bannerUrl" bannerText="Наш проект" />
@@ -24,7 +23,6 @@
             <PaginationComp />
         </div>
     </main>
-    <FooterComp />
 </template>
 
 <script>
@@ -33,16 +31,14 @@ import BannerComp from '../components/BannerComp.vue';
 import BreadCrumbs from '../components/BreadCrumbs.vue';
 import ButtonArrowRight from '../components/ButtonArrowRight.vue'
 import PaginationComp from '../components/PaginationComp.vue'
-import FooterComp from '../blocks/FooterComp.vue';
-import HeaderComp from '../blocks/HeaderComp.vue';
+
 export default {
     components: {
         BannerComp,
         BreadCrumbs,
         ButtonArrowRight,
         PaginationComp,
-        FooterComp,
-        HeaderComp
+
     },
     data() {
         return {

@@ -1,11 +1,15 @@
 <template>
-   <header class="header center">
+    <header class="header center">
         <div class="header__left">
-            <a class="logo" href="#"><IconLogo /><span>Interno</span></a>
+            <router-link to="/" class="logo">
+                <IconLogo /><span>Interno</span>
+            </router-link>
         </div>
         <div class="header__right">
             <ul class="header__menu">
-                <li v-for="link in headerLinks" :key="link" :class="link.classItem"><a :href="link.href">{{ link.name }}</a></li>
+                <li class="header__menu__item"><router-link to="/">Домой</router-link></li>
+                <li class="header__menu__item"><router-link to="/blog">Блог</router-link></li>
+                <li class="header__menu__item"><router-link to="/project">Проект</router-link></li>
             </ul>
         </div>
     </header>
@@ -19,32 +23,13 @@ export default {
     },
     name: 'header-temp',
     data() {
-            return {
-                headerLinks: [
-                    {
-                        href: "#",
-                        classItem: "header__menu__item",
-                        name: "Домой"
+        return {
 
-                    },
-                    {
-                        href: "#",
-                        classItem: "header__menu__item",
-                        name: "Проект"
-
-                    },
-                    {
-                        href: "#",
-                        classItem: "header__menu__item",
-                        name: "Блог"
-
-                    }
-                ]
-            }
-        },
+        }
+    },
 }
 </script>
 
 <style lang="sass" scoped>
-    
+
 </style>

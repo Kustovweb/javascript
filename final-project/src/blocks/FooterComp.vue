@@ -1,9 +1,11 @@
-<template >
-     <footer class="footer center">
+<template>
+    <footer class="footer center">
         <div class="footer__interno">
             <div class="footer__logo">
-                <a class="logo" href="#"><IconLogo /><span>Interno</span></a>
-                        
+                <router-link to="/" class="logo">
+                    <IconLogo /><span>Interno</span>
+                </router-link>
+
             </div>
             <div class="footer__socials">
                 <a href="#" class="footer__icon__twitter">
@@ -37,15 +39,15 @@
 
 <script>
 import IconLogo from '../components/icons/IconLogo.vue'
- export default {
-        name: 'footer-temp',
-        components: {
-            IconLogo
-        }
+export default {
+    name: 'footer-temp',
+    components: {
+        IconLogo
+    }
 
- }
+}
 </script>
 
 <style lang="sass" scoped>
-    
+
 </style>

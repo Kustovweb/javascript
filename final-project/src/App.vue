@@ -1,14 +1,12 @@
 <script setup>
-import PageMain from "./pages/PageMain.vue"
-import PageProject from "./pages/PageProject.vue"
-import PageBlogDetails from "./pages/PageBlogDetails.vue"
-import PageBlog from "./pages/PageBlog.vue"
-import PageProjectDetails from "./pages/PageProjectDetails.vue"
+import HeaderComp from "./blocks/HeaderComp.vue"
+import FooterComp from "./blocks/FooterComp.vue"
 </script>
 
 <template>
-  <PageProjectDetails />
-  <!-- <PageProject /> -->
+  <HeaderComp />
+  <router-view></router-view>
+  <FooterComp />
 </template>
 
 <style scoped lang="sass">
