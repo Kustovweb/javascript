@@ -1,9 +1,10 @@
 <template>
     <div class="pagination center" v-if="isVisible">
-        <router-link @click="pageSelect(page)" class="pagination__page" v-for="page in totalPage" :to="`/blog/${page}`"
-            :key="page">{{ page
+        <router-link @click="pageSelect(page)" class="pagination__page" v-for="page in totalPage"
+            :to="`/${typePage}/${page}`" :key="page">{{ page
             }}</router-link>
-        <router-link @click="nextPage(page)" :to="`/blog/${page}`" :class="{ disabled: true }" class="pagination__page">
+        <router-link @click="nextPage(page)" :to="`/${typePage}/${page}`" :class="{ disabled: true }"
+            class="pagination__page">
             <IconArrowRight :width="5" :height="13" />
         </router-link>
     </div>
@@ -30,6 +31,10 @@ export default {
             type: Boolean,
             required: false,
             default: false
+        },
+        typePage: {
+            type: String,
+            required: true,
         }
     },
     methods: {

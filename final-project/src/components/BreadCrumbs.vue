@@ -1,11 +1,9 @@
 <template>
-    <ul class="breadcrumbs" :style="{ justifyContent: justify }">
-        <li v-for="crumb, index in crumbs" href="#" :class="{ disabled: isLast(index) }">
-            <button @click="selected(crumb)" class="breadcrumbs__link">
-                {{ crumb }}
-            </button>
-        </li>
-    </ul>
+    <div class="breadcrumbs" :style="{ justifyContent: justify }">
+        <a class="breadcrumbs__link" href="/">Домой</a>
+        <a class="breadcrumbs__link" href="#">Интерьер</a>
+        <a class="breadcrumbs__link" href="#">Декор</a>
+    </div>
 </template>
 
 <script>
@@ -32,8 +30,18 @@ export default {
 }
 </script>
 
-<style lang="sass">
-    .breadcrumbs
-        padding: 0
-        list-style: none
+<style lang="sass" scoped>
+.breadcrumbs
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 16px
+    font-family: 'Jost', sans-serif
+    &__li
+        position: relative
+    &__link:not(:last-child)::after
+        content: '/'
+        display: inline-flex
+        padding-right: 8px
+        padding-left: 8px
 </style>

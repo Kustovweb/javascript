@@ -15,11 +15,12 @@
 
 <script>
 import ButtonArrowRight from '../components/ButtonArrowRight.vue';
-
+import BreadCrumbs from '../components/BreadCrumbs.vue'
 export default {
     name: 'ProjectItem',
     components: {
-        ButtonArrowRight
+        ButtonArrowRight,
+        BreadCrumbs
     },
     props: {
         projectItem: {

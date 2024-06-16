@@ -235,7 +235,7 @@ export default {
                 title: "Гостинная",
                 tag: 'Гостиная'
 
-            }
+            },
         ],
     },
     getters: {
@@ -249,7 +249,7 @@ export default {
             return state.dataCounterListMain
         },
         dataProjectListTag(state) {
-            return state.dataProjectList
+            return state.dataProjectListTag
         },
         dataProjectList(state) {
             return state.dataProjectList

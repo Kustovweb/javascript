@@ -55,7 +55,4 @@ export default {
     gap: 20px
     font-size: 20px
     list-style: none
-.menu__item
-
-
 </style>

@@ -6,7 +6,9 @@
                     <h1 class="banner__content__h1">Пусть ваш дом<br> будет уникальным</h1>
                     <p class="banner__content__p">Существует много вариаций Lorem Ipsum, которые можно использовать
                     </p>
-                    <ButtonMain title="Начать" />
+                    <a href="#linkProject">
+                        <ButtonMain title="Начать" />
+                    </a>
                 </div>
             </div>
         </section>
@@ -16,7 +18,7 @@
                 читабельный
                 контент страницы
             </p>
-            <div class="project__items">
+            <div id="linkProject" class="project__items">
                 <div class="project__item" v-for="item in dataProjectList" :key="item.id">
                     <div class="project__item__img project__item__img_br-top-right">
                         <img :src="item.url" :alt="item.imgAlt">

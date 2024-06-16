@@ -64,5 +64,6 @@ export default {
     .page-project__item
         img
             width: 100%
+                
 
 </style>

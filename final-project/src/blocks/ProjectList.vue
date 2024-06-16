@@ -4,16 +4,17 @@
             <BannerComp :urlImg="bannerUrl" bannerText="Наш проект" :banner="true" />
             <section class="categories center">
                 <nav class="categories__nav">
-                    <span @click="filteredArticles(nav.tag)" class="categories__nav-item" v-for="nav in dataTag">{{
-                        nav.tag
-                    }}</span>
+                    <span @click="filteredArticles(nav.tag)" class="categories__nav-item" v-for="nav in dataTag"
+                        :class="[nav.tag === currentTagName ? 'active' : '']">{{
+                            nav.tag
+                        }}</span>
                 </nav>
             </section>
             <section class="page-project__list center">
                 <ProjectItem :dataItem="item" v-for="item in filter" :key="item.id" />
             </section>
         </div>
-        <PaginationComp :isVisible="showPagination" />
+        <PaginationComp :totalPage="totalPages" @onCurrentPage="onCurrentPage" :isVisible="true" typePage="project" />
     </template>
 </template>
 
@@ -34,6 +35,8 @@ export default {
         return {
             currentTagName: "",
             bannerUrl: `/img/bg-project-page.png`,
+            totalPage: 4,
+            currentPage: 1,
         }
     },
     props: {
@@ -54,12 +57,15 @@ export default {
             required: false,
             default: false
 
-        }
+        },
     },
     methods: {
         filteredArticles(tag) {
             this.currentTagName = tag
-        }
+        },
+        onCurrentPage(page) {
+            return this.currentPage = page
+        },
     },
     computed: {
         filter() {
@@ -69,13 +75,21 @@ export default {
                 return this.dataList
             }
         },
+        paginatedBlog() {
+            const { currentPage, totalPage } = this;
+            const startIndex = (currentPage - 1) * totalPage;
+            const endIndex = startIndex + totalPage;
+            return this.dataList.slice(startIndex, endIndex)
+        },
+        totalPages() {
+            return Math.ceil(this.dataList.length / this.totalPage);
+        },
     }
 }
 </script>
 
 <style lang="sass">
-    .page-project:nth-child(n - 1)
-        img
-            height: 800px
-        
+.categories__nav-item
+    padding-right: 10px
+    padding-left: 10px
 </style>

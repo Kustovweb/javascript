@@ -27,7 +27,7 @@ export default [
         }
     },
     {
-        path: '/projectDetails:id?', component: PageProjectDetails, meta: {
+        path: '/projectDetails', component: PageProjectDetails, meta: {
             breadcrumb: ''
         }
     }

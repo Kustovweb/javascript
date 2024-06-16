@@ -2,7 +2,8 @@
     <div class="blog__items">
         <BlogItem :blogItem="blogItem" v-for="blogItem in paginatedBlog" :key="blogItem.id" />
     </div>
-    <PaginationComp :totalPage="totalPages" @onCurrentPage="onCurrentPage" :isVisible="showPagination" />
+    <PaginationComp :totalPage="totalPages" @onCurrentPage="onCurrentPage" :isVisible="showPagination"
+        typePage="blog" />
 </template>
 
 <script>
