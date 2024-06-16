@@ -76,7 +76,95 @@ export default {
                 date: "25 Декабрь,2022",
                 article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
 
+            },
+            {
+                id: 8,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 9,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 10,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 11,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 12,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 13,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 14,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
+            },
+            {
+                id: 15,
+                img: "/img/blog6.png",
+                imgAlt: "blogImg",
+                title: "Лучшие интерьерные решения для спален Это последний пост",
+                tag: "Спальня",
+                date: "25 Декабрь,2022",
+                article: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eligendi officiis maiores, rem rerum porro quae beatae eaque nostrum sed excepturi cumque aut. Voluptatibus amet officiis repellendus quae ipsum esse!"
+
             }
+
+
+
+
+
+
+
+
 
 
         ],

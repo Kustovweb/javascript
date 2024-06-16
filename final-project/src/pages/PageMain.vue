@@ -16,7 +16,22 @@
                 читабельный
                 контент страницы
             </p>
-            <ProjectList :project-list="dataProjectList" />
+            <div class="project__items">
+                <div class="project__item" v-for="item in dataProjectList" :key="item.id">
+                    <div class="project__item__img project__item__img_br-top-right">
+                        <img :src="item.url" :alt="item.imgAlt">
+                    </div>
+                    <div class="project__item__text">
+                        <div class="project__item__text-wrap">
+                            <p>{{ item.title }}</p>
+                            <p>Декор / Планировка</p>
+                        </div>
+                        <router-link to="/project">
+                            <ButtonArrowRight />
+                        </router-link>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="counter">
             <ul class="counter-list center">
@@ -34,7 +49,7 @@
                     контент
                     страницы</p>
             </div>
-            <BlogList :blogList="getDataBlog" />
+            <BlogList :blogData="blogListCounter" />
         </section>
     </main>
 </template>
@@ -45,19 +60,27 @@ import { mapGetters } from 'vuex/dist/vuex.cjs.js';
 import BlogList from '../blocks/BlogList.vue';
 import ProjectList from '../blocks/ProjectList.vue';
 import ButtonMain from '../components/ButtonMain.vue';
+import ButtonArrowRight from '../components/ButtonArrowRight.vue';
 
 export default {
     components: {
         ButtonMain,
         ProjectList,
         BlogList,
+        ButtonArrowRight
     },
     data() {
         return {
+            countArticleBlog: 3,
         }
     },
     computed: {
-        ...mapGetters(['getDataCounterMain', 'getDataBlog', 'dataProjectList'])
+        ...mapGetters(['getDataCounterMain', 'getDataBlog', 'dataProjectList']),
+        blogListCounter() {
+            if (this.getDataBlog.length > 0) {
+                return this.getDataBlog.slice(0, this.countArticleBlog)
+            }
+        },
     }
 
 }

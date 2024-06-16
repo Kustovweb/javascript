@@ -1,74 +1,34 @@
 <template>
     <main class="main">
-        <div class="page-project">
-            <BannerComp :urlImg="bannerUrl" bannerText="Наш проект" />
-            <section class="categories center">
-                <nav class="categories__nav">
-                    <span @click="filteredArticles(nav.tag)" class="categories__nav-item"
-                        v-for="nav in dataProjectListTag">{{ nav.tag }}</span>
-                </nav>
-            </section>
-            <section class="page-project__list center">
-                <div class="page-project__item" v-for="project in filter" :key="project.id">
-                    <img :src="project.url" :alt="imgAlt">
-                    <div class="page-project-wrap">
-                        <div class="page-project__nav">
-                            <p>{{ project.title }}</p>
-                            <BreadCrumbs justify="flex-start" />
-                        </div>
-                        <ButtonArrowRight :width="70" :height="70" />
-                    </div>
-                </div>
-            </section>
-            <PaginationComp />
-        </div>
+        <ProjectList :dataList="dataProjectList" :dataTag="dataProjectListTag" />
     </main>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import BannerComp from '../components/BannerComp.vue';
-import BreadCrumbs from '../components/BreadCrumbs.vue';
-import ButtonArrowRight from '../components/ButtonArrowRight.vue'
-import PaginationComp from '../components/PaginationComp.vue'
+import ProjectList from '../blocks/ProjectList.vue';
 
 export default {
     components: {
-        BannerComp,
-        BreadCrumbs,
-        ButtonArrowRight,
-        PaginationComp,
-
+        ProjectList
     },
     data() {
         return {
-            currentTagName: "",
-            bannerUrl: `/img/bg-project-page.png`,
+
 
         }
 
     },
-    methods: {
-        filteredArticles(tagName) {
-            if (tagName) {
-                this.currentTagName = tagName;
-            }
-        }
-    },
+
     computed: {
         ...mapGetters(["dataProjectListTag", "dataProjectList"]),
-        filter() {
-            if (this.currentTagName) {
-                return this.dataProjectList.filter(item => item.tag === this.currentTagName);
-            } else {
-                return this.dataProjectList
-            }
-        }
-    }
+
+
+    },
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
     .categories
         margin-top: 200px
         &__nav
@@ -93,7 +53,7 @@ export default {
     .page-project__list
         margin-top: 61px
         display: grid
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: repeat(2, 1fr)
         grid-auto-rows: 1fr
         gap: 30px
         margin-bottom: 61px

@@ -1,6 +1,6 @@
 <template>
     <button class="btn" :style="buttonStyle" :class="classItem">
-        <IconArrowRight icon-name="arrow-right" :width="iconWidth" :height="iconHeght"/>
+        <IconArrowRight icon-name="arrow-right" :width="iconWidth" :height="iconHeght" />
     </button>
 </template>
 
@@ -36,13 +36,14 @@ export default {
         },
         classItem: {
             type: String,
+            default: "active"
         }
 
     }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .btn
     display: flex
     justify-content: center

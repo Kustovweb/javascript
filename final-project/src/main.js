@@ -12,3 +12,11 @@ const router = createRouter({
     routes
 })
 createApp(App).use(store).use(router).mount('#app')
+
+// const isAuth = true;
+
+router.beforeEach((to, from, next) => {
+    console.log(to, from);
+    // if (isAuth && to.path === "/project") next('/project')
+    next()
+})

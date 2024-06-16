@@ -18,11 +18,7 @@
         </div>
         <div class="footer__pages">
             <p class="footer__pages__title">Страницы</p>
-            <ul class="footer__pages__items">
-                <li class="footer__pages__item"><a href="#">Домой</a></li>
-                <li class="footer__pages__item"><a href="#">Проект</a></li>
-                <li class="footer__pages__item"><a href="#">Блог</a></li>
-            </ul>
+            <MenuComp class="menu-footer" />
         </div>
         <div class="footer__contact">
             <p class="footer__contact__title">Контакты</p>
@@ -39,15 +35,27 @@
 
 <script>
 import IconLogo from '../components/icons/IconLogo.vue'
+import MenuComp from '../components/MenuComp.vue';
 export default {
     name: 'footer-temp',
     components: {
-        IconLogo
+        IconLogo,
+        MenuComp
     }
 
 }
 </script>
 
 <style lang="sass" scoped>
+.menu-footer
+    display: flex
+    flex-flow: column wrap
+    align-items: flex-start
+    padding: 0
+    gap: 20px
+    font-size: 20px
+    list-style: none
+.menu__item
+
 
 </style>

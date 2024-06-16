@@ -6,20 +6,18 @@
             </router-link>
         </div>
         <div class="header__right">
-            <ul class="header__menu">
-                <li class="header__menu__item"><router-link to="/">Домой</router-link></li>
-                <li class="header__menu__item"><router-link to="/blog">Блог</router-link></li>
-                <li class="header__menu__item"><router-link to="/project">Проект</router-link></li>
-            </ul>
+            <MenuComp class="header__menu" />
         </div>
     </header>
 </template>
 
 <script>
 import IconLogo from '../components/icons/IconLogo.vue';
+import MenuComp from '../components/MenuComp.vue'
 export default {
     components: {
-        IconLogo
+        IconLogo,
+        MenuComp
     },
     name: 'header-temp',
     data() {

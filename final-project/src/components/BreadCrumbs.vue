@@ -1,9 +1,11 @@
 <template>
-    <div class="breadcrumbs" :style="{ justifyContent: justify }">
-        <a class="breadcrumbs__link" href="#">Интерьер</a>
-        <a class="breadcrumbs__link" href="#">Домой</a>
-        <a class="breadcrumbs__link" href="#">Декор</a>
-    </div>
+    <ul class="breadcrumbs" :style="{ justifyContent: justify }">
+        <li v-for="crumb, index in crumbs" href="#" :class="{ disabled: isLast(index) }">
+            <button @click="selected(crumb)" class="breadcrumbs__link">
+                {{ crumb }}
+            </button>
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -13,9 +15,25 @@ export default {
         justify: {
             type: String,
             default: "center"
+        },
+        crumbs: {
+            type: Array,
+            required: true
+        }
+    },
+    methods: {
+        isLast(index) {
+            return index === this.crumbs.length - 1
+        },
+        selected(crumb) {
+            this.$emit('selected', crumb)
         }
     }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="sass">
+    .breadcrumbs
+        padding: 0
+        list-style: none
+</style>
