@@ -12,7 +12,7 @@ buttonSort.style.marginLeft = "10px";
 buttonSort.disabled = true;
 root.append(buttonSort);
 
-async function loadData(url) { // Ф-я загружающая контент (возвращает промис т.к асинхронная)
+async function loadData(url) { // Ф-я загружающая контент (возвращает промис)
     let res = await fetch(url);
     if (res.ok) {
         let data = await res.json();

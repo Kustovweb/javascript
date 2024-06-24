@@ -205,42 +205,46 @@ export default {
         dataProjectList: [
             {
                 id: 1,
-                url: "/img/project1.png",
+                url: ["/img/project1.png", "/img/project2.png", "/img/project3.png", "/img/project4.png"],
                 imgAlt: "projectImg",
                 title: "Современная Спальня",
-                tag: 'Спальня'
+                tag: 'Спальня',
+                article: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nihil fugit voluptatum laudantium minima aut sed quidem omnis eum accusamus ut ab odit consectetur ipsa, laborum officia impedit maiores nam.'
 
 
             },
             {
                 id: 2,
-                url: "/img/project2.png",
+                url: ["/img/project1.png", "/img/project2.png", "/img/project3.png", "/img/project4.png"],
                 imgAlt: "projectImg",
                 title: "Ванная",
-                tag: 'Ванная комната'
+                tag: 'Ванная комната',
+                article: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nihil fugit voluptatum laudantium minima aut sed quidem omnis eum accusamus ut ab odit consectetur ipsa, laborum officia impedit maiores nam.'
 
             },
             {
                 id: 3,
-                url: "/img/project3.png",
+                url: ["/img/project1.png", "/img/project2.png", "/img/project3.png", "/img/project4.png"],
                 imgAlt: "projectImg",
                 title: "Современная Кухня",
-                tag: 'Кухня'
+                tag: 'Кухня',
+                article: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nihil fugit voluptatum laudantium minima aut sed quidem omnis eum accusamus ut ab odit consectetur ipsa, laborum officia impedit maiores nam.'
 
             },
             {
                 id: 4,
-                url: "/img/project4.png",
+                url: ["/img/project1.png", "/img/project2.png", "/img/project3.png", "/img/project4.png"],
                 imgAlt: "projectImg",
                 title: "Гостинная",
-                tag: 'Гостиная'
+                tag: 'Гостиная',
+                article: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nihil fugit voluptatum laudantium minima aut sed quidem omnis eum accusamus ut ab odit consectetur ipsa, laborum officia impedit maiores nam.'
 
             },
         ],
     },
     getters: {
         getArticle(state) {
-            return state.dataProjectDetails
+            return state.dataProjectList
         },
         getDataBlog(state) {
             return state.dataBlog

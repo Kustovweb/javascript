@@ -1,11 +1,12 @@
 <template>
     <BannerComp :urlImg="bannerUrl" :banner="false" />
     <section class="page-details__article center text-center">
-        <h1 class="heading">{{ getArticle.title }}</h1>
-        <p class="page-details__text">{{ getArticle.article }}</p>
+        <!-- <h1 class="heading">{{ article.title }}</h1>
+        <p class="page-details__text">{{ article.article }}</p> -->
+        <router-view></router-view>
     </section>
     <div class="project__slider center">
-        <Slider />
+        <Slider :images="article.url" />
     </div>
 </template>
 
@@ -22,11 +23,18 @@ export default {
     },
     data() {
         return {
-            bannerUrl: `img/pageProjectDetails.png`
+            bannerUrl: `img/pageProjectDetails.png`,
+            article: null
         }
     },
     computed: {
         ...mapGetters(["getArticle"])
+    },
+    created() {
+        const article = this.getArticle.find(article => article.id === this.$route.params.id)
+        if (project) {
+            this.article = article
+        }
     }
 }
 </script>

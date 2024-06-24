@@ -2,9 +2,9 @@
     <swiper :spaceBetween="30" :pagination="{
         clickable: true,
     }" :modules="modules" class="mySwiper">
-        <swiper-slide v-for="img of dataProjectList" :key="img.id">
+        <swiper-slide v-for="img, index of images" :key="index">
 
-            <img :src="img.url" :alt="imgAlt">
+            <img :src="img">
         </swiper-slide>
     </swiper>
 </template>
@@ -29,6 +29,12 @@ export default {
     },
     computed: {
         ...mapGetters(["dataProjectList"])
+    },
+    props: {
+        images: {
+            type: Array,
+            required: false
+        }
     }
 }
 </script>

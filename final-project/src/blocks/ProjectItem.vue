@@ -6,7 +6,7 @@
                 <p>{{ dataItem.title }}</p>
                 <BreadCrumbs justify="flex-start" />
             </div>
-            <router-link to="/projectDetails">
+            <router-link to="{name: 'projectDetails', params: {id: } }">
                 <ButtonArrowRight :width="70" :height="70" />
             </router-link>
         </div>
