@@ -3,7 +3,7 @@
     <div class="my-8 mx-auto text-center">
         <label><input type="text" v-model="nameVacancy"
                 class="pt-2 px-2 pb-2 border-2 border-indigo-500/100 rounded-xl mr-2" placeholder="Название вакансии"
-                v-for="pos in getPosition.suggestions" v-on:change="getRegionId(pos.data.region_kladr_id)"></label>
+                v-for="pos in getPosition.suggestions" v-on:change="getRegionId(pos.data.region_kladr_id)" /></label>
         <button @click="getListData"
             class="border border-slate-300 hover:border-indigo-300 py-2 px-6 rounded-full ml-8">Найти</button>
     </div>
@@ -15,10 +15,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import TrudvsemAll from '@/components/TrudvsemAll.vue'
-import BookmarksList from '@/pages/PageBookmarks.vue'
 import HeadHunterAll from '@/components/HeadHunterAll.vue';
 import SearchNavBar from '@/components/SearchNavBar.vue';
-// import HeadHunterAll from '@/components/HeadHunterAll.vue';
 export default {
     name: 'PageMain',
     components: {
@@ -51,9 +49,9 @@ export default {
                 return new Error("Ошибка получения данных")
             }
         },
-        async getListData() {
-            this.getData().then(res => {
-                this.vacancies = res.results.vacancies
+        getListData() {
+            this.getData().then(async res => {
+                this.vacancies = await res.results.vacancies
             })
         },
         getRegionId(regionId) {
