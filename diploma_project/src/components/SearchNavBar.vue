@@ -2,10 +2,10 @@
     <div class="container mx-auto text-center">
         <header class="text-center mt-8 ">
             <p class="mt-4">Ваши координаты: {{ dataGeoloc.lat }} : {{ dataGeoloc.lon }}</p>
-            <div v-for="item, index in dataPosition.suggestions" :key="index">
-                <p class="mt-4"> Ваше местоположение {{ item.value }}</p>
-                <p>{{ item.data.region_kladr_id }}</p>
-                <p> {{ item.data.area }}</p>
+            <div>
+                <p class="mt-4"> Ваше местоположение {{ dataPosition.regionAll }}</p>
+                <p>{{ dataPosition.city }}</p>
+                <p> {{ dataPosition.regionId }}</p>
             </div>
         </header>
 
@@ -21,8 +21,8 @@ export default {
             required: true
         },
         dataPosition: {
-            type: Array,
-            required: true
+            type: Object,
+            required: false
         }
     }
 }

@@ -1,7 +1,7 @@
 export default {
     state: {
         vacancies: [], // Массив вакансий
-        position: [], // Массив с данными города
+        position: {}, // Массив с данными города
         geoLocation: {}, // Координаты
     },
     getters: {
@@ -29,7 +29,7 @@ export default {
     actions: {
         getGeolocation({ commit }) {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(async function (position) {
+                navigator.geolocation.getCurrentPosition(async position => {
                     const location = {
                         lat: position.coords.latitude,
                         lon: position.coords.longitude
@@ -52,7 +52,14 @@ export default {
 
                     const response = await fetch(url, options)
                     const result = await response.json();
-                    commit('updatePosition', result)
+                    for (let item of result.suggestions) {
+                        commit('updatePosition', {
+                            regionAll: item.value,
+                            city: item.data.area,
+                            regionId: item.data.region_kladr_id
+                        })
+                    }
+
                 });
             }
         },
