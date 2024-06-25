@@ -1,3 +1,4 @@
+import PageMain from '@/pages/PageMain.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -7,7 +8,7 @@ const router = createRouter({
       path: '/PageBookmarks', component: () => import('@/pages/PageBookmarks.vue')
     },
     {
-      path: '/PageMain', component: () => import('@/pages/PageMain.vue')
+      path: '/PageMain', component: PageMain
     },
   ]
 })

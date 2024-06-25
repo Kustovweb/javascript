@@ -1,5 +1,6 @@
 <script setup>
 import NavigationBar from '@/components/NavigationBar.vue'
+import PageMain from './pages/PageMain.vue';
 </script>
 
 <template>

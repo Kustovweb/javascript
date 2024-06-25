@@ -50,15 +50,19 @@ export default {
                         body: JSON.stringify(query)
                     }
 
-                    const response = await fetch(url, options)
-                    const result = await response.json();
-                    for (let item of result.suggestions) {
-                        commit('updatePosition', {
-                            regionAll: item.value,
-                            city: item.data.area,
-                            regionId: item.data.region_kladr_id
+                    await fetch(url, options)
+                        .then(response => {
+                            response.json().then(data => {
+                                for (let item of data.suggestions) {
+                                    commit('updatePosition', {
+                                        regionAll: item.value,
+                                        city: item.data.area,
+                                        regionId: item.data.region_kladr_id
+                                    })
+                                }
+                            })
                         })
-                    }
+
 
                 });
             }
