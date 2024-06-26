@@ -29,7 +29,7 @@ export default {
     actions: {
         getGeolocation({ commit }) {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(async position => {
+                navigator.geolocation.getCurrentPosition(position => {
                     const location = {
                         lat: position.coords.latitude,
                         lon: position.coords.longitude
@@ -50,7 +50,7 @@ export default {
                         body: JSON.stringify(query)
                     }
 
-                    await fetch(url, options)
+                    fetch(url, options)
                         .then(response => {
                             response.json().then(data => {
                                 for (let item of data.suggestions) {

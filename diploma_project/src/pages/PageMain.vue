@@ -5,6 +5,10 @@
             <input type="text" v-model="nameVacancy" v-on:focus="true"
                 class="pt-2 px-2 pb-2 border-2 border-indigo-500/100 rounded-xl mr-2" placeholder="Название вакансии" />
         </label>
+        <label>Ваш код региона
+            <input class="pt-2 px-2 pb-2 border-2 border-indigo-500/100 rounded-xl mr-2" type="text"
+                v-model="tempRegion" placeholder="Ваш регион">
+        </label>
         <button @click="getData"
             class="border border-slate-300 hover:border-indigo-300 py-2 px-6 rounded-full ml-8">Найти</button>
     </div>
@@ -40,12 +44,13 @@ export default {
             vacancies: {},
             region: null,
             localVacancy: [],
+            tempRegion: ""
         }
     },
     methods: {
         ...mapActions(['getGeolocation']),
         getData() {
-            fetch(`https://opendata.trudvsem.ru/api/v1/vacancies/region/${this.regionId}?limit=${this.limit}&text=${this.nameVacancy}`)
+            fetch(`https://opendata.trudvsem.ru/api/v1/vacancies/region/${this.tempRegion}?limit=${this.limit}&text=${this.nameVacancy}`)
                 .then(response => {
                     response.json().then(data => {
                         this.vacancies = data.results.vacancies
