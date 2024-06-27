@@ -7,19 +7,25 @@
 <script>
 import TrudvsemItem from './TrudvsemItem.vue'
 export default {
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+    },
     name: 'TrudvsemAll',
     components: {
-        TrudvsemItem
+        TrudvsemItem,
+    },
+    computed: {
+
     },
     props: {
         data: {
             type: Object,
             required: true
         }
-    },
-
-    computed: {
-
     },
 
 
