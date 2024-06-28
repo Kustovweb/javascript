@@ -1,5 +1,5 @@
 <template>
-    <div class="border-2 rounded-xl px-2 py-2 mt-5  w-2/3 mx-auto"
+    <div class="border rounded-xl px-2 py-2 mt-5  w-2/3 mx-auto"
         :class="[isBookmark ? 'border-green-500/100' : 'border-indigo-500/100']">
         <p class="mt-4">Профессия: {{ dataItem['job-name'] }}</p>
         <p class="mt-4">Местоположение : {{ dataItem.region.name }} </p>
@@ -10,10 +10,10 @@
             }}</p>
         <a :href="dataItem['vac_url']" target="_blank">Перейти на сайт trudvsem.ru</a>
         <button v-if="!isBookmark" @click="addBookmarks(dataItem.id)"
-            class="ml-4 my-4 border-2 border-indigo-500/100 rounded-xl px-2 py-2">Добавить в
+            class="ml-4 my-4 border border-indigo-500/100 rounded-xl px-2 py-2">Добавить в
             закладки</button>
         <button v-else @click="removeVacancy(dataItem.id)"
-            class="ml-4 my-4 border-2 border-red-500/100 rounded-xl px-2 py-2">Удалить
+            class="ml-4 my-4 border border-red-500/100 rounded-xl px-2 py-2">Удалить
             из закладок</button>
         <div>
 
