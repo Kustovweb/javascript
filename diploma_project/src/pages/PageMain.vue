@@ -10,7 +10,7 @@
             class="bg-gray-50 border border-indigo-500/100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option v-for="region in getRegions" :key="region.code" :value="region.code" :selected="region.regions">{{
                 region.region
-            }}</option>
+                }}</option>
         </select>
         <button @click="getData"
             class="border border-slate-300 hover:border-indigo-300 py-2 px-6 rounded-full ml-8">Найти</button>
@@ -24,11 +24,13 @@
 import { mapGetters, mapActions } from 'vuex'
 import TrudvsemAll from '@/components/TrudvsemAll.vue'
 import SearchPosition from '@/components/SearchPosition.vue'
+import NavigationBar from '@/components/NavigationBar.vue';
 export default {
     name: 'PageMain',
     components: {
         TrudvsemAll,
         SearchPosition,
+        NavigationBar
     },
     computed: {
         ...mapGetters(['getLocation', 'getPosition', 'getRegions']),
@@ -51,7 +53,7 @@ export default {
     methods: {
         ...mapActions(['getGeolocation']),
         getData() {
-            fetch(`https://opendata.trudvsem.ru/api/v1/vacancies/region/${this.tempRegion}?limit=${this.limit}&text=${this.nameVacancy}`)
+            fetch(`https://opendata.trudvsem.ru/api/v1/vacancies/region/${this.tempRegion ?? 77}?limit=${this.limit}&text=${this.nameVacancy}`)
                 .then(response => {
                     response.json().then(data => {
                         this.vacancies = data.results.vacancies
