@@ -1,9 +1,8 @@
 <template>
-    <div class="container mx-auto my-4 relative">
+    <div class="container mx-auto my-4">
         <h1 v-if="getDataArrLength > 0" class="text-center font-semibold text-3xl">Ваши закладки</h1>
         <p v-else-if="getDataArrLength == 0" class="text-center my-4 text-red-500 text-xl">Закладок нет</p>
         <p class="text-center mt-4">Закладок: {{ getDataArrLength }}</p>
-        <router-link to="/PageMain" class="border rounded-xl px-2 py-2 fixed">К поиску</router-link>
         <div v-for="item in dataArr" :key="item.id" class="border rounded-xl px-2 py-2 mt-5  w-2/3 mx-auto"
             :class="[isBookmark ? 'border-green-500/100' : 'border-indigo-500/100']">
             <p>Профессия: {{ item['job-name'] }}</p>
